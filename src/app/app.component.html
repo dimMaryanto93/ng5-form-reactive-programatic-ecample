@@ -1,26 +1,37 @@
 <div class="row">
   <div class="container">
-    <div class="form-group">
-      <label>Nomor Register Nasabah</label>
-      <input type="text" name="cif" id="cif" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Nama Lengakap</label>
-      <input type="text" name="namaLengkap" id="namaLengkap" class="form-control">
-    </div>
-    <div class="form-group">
-      <label>Nama sesuia Identitias (KTP / SIM / Passport )</label>
-      <input type="text" name="namaIdentitas" id="namaIdentitas" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="l">
-        <input type="radio" name="jenisKelamin" id="l" value="Laki - Laki" class="radio-inline">
-        Laki - Laki
-      </label>
-      <label for="p">
-        <input type="radio" name="jenisKelamin" id="p" value="Perempuan" class="radio-inline">
-        Perempuan
-      </label>
-    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Nomor Register Nasabah</label>
+        <input type="text" name="cif" id="cif" class="form-control" formControlName="cif" >
+      </div>
+      <div class="form-group">
+        <label>Nama Lengakap</label>
+        <input type="text" name="namaLengkap" id="namaLengkap" class="form-control" formControlName="namaLengkap">
+      </div>
+      <div class="form-group">
+        <label>Nama sesuia Identitias (KTP / SIM / Passport )</label>
+        <input type="text" name="namaIdentitas" id="namaIdentitas"  class="form-control" formControlName="namaIdentitas">
+      </div>
+      <div class="form-group">
+        <label for="l">
+          <input type="radio" name="jenisKelamin" id="l" value="Laki - Laki" class="radio-inline" formControlName="jenisKelamin">
+          Laki - Laki
+        </label>
+        <label for="p">
+          <input type="radio" name="jenisKelamin" id="p" value="Perempuan" class="radio-inline" formControlName="jenisKelamin">
+          Perempuan
+        </label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+          Kirim
+        </button>
+        <button type="reset" class="btn btn-warning">
+          Reset
+        </button>
+      </div>
+
+    </form>
   </div>
 </div>
